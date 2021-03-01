@@ -1,0 +1,62 @@
+{
+    "name": "astrotomic/statamic-webmentions",
+    "type": "library",
+    "description": "",
+    "keywords": [
+        "astrotomic",
+        "statamic-webmentions",
+        "laravel",
+        "statamic",
+        "webmentions",
+        "webmention"
+    ],
+    "homepage": "https://github.com/astrotomic/statamic-webmentions",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Witkowski",
+            "email": "gummibeer@astrotomic.info",
+            "homepage": "https://gummibeer.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "statamic/cms": "^3.0",
+        "astrotomic/laravel-webmentions": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.3"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "statamic": {
+            "name": "Webmentions",
+            "description": "A webmention.io integration for Statamic v3."
+        },
+        "laravel": {
+            "providers": [
+                "WebmentionsStatamicServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Astrotomic\\Webmentions\\Statamic\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Astrotomic\\Webmentions\\Statamic\\Tests\\": "tests"
+        }
+    },
+    "support": {
+        "email": "dev@astrotomic.info"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}
