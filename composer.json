@@ -22,8 +22,8 @@
     ],
     "require": {
         "php": "^7.4 || ^8.0",
-        "statamic/cms": "^3.0",
-        "astrotomic/laravel-webmentions": "*"
+        "astrotomic/laravel-webmentions": "*",
+        "statamic/cms": "^3.0"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
@@ -33,14 +33,14 @@
         "sort-packages": true
     },
     "extra": {
-        "statamic": {
-            "name": "Webmentions",
-            "description": "A webmention.io integration for Statamic v3."
-        },
         "laravel": {
             "providers": [
                 "WebmentionsStatamicServiceProvider"
             ]
+        },
+        "statamic": {
+            "name": "Webmentions",
+            "description": "A webmention.io integration for Statamic v3."
         }
     },
     "autoload": {
@@ -53,10 +53,10 @@
             "Astrotomic\\Webmentions\\Statamic\\Tests\\": "tests"
         }
     },
-    "support": {
-        "email": "dev@astrotomic.info"
-    },
     "scripts": {
         "test": "vendor/bin/phpunit"
+    },
+    "support": {
+        "email": "dev@astrotomic.info"
     }
 }
