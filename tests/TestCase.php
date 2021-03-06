@@ -6,6 +6,7 @@ use Astrotomic\Webmentions\Statamic\WebmentionsStatamicServiceProvider;
 use Astrotomic\Webmentions\WebmentionsServiceProvider;
 use Illuminate\Support\Facades\Http;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
+use Statamic\Extend\Manifest;
 use Statamic\Facades\Antlers;
 use Statamic\Providers\StatamicServiceProvider;
 
@@ -17,6 +18,18 @@ abstract class TestCase extends OrchestraTestCase
             StatamicServiceProvider::class,
             WebmentionsServiceProvider::class,
             WebmentionsStatamicServiceProvider::class,
+        ];
+    }
+
+    protected function getEnvironmentSetUp($app)
+    {
+        parent::getEnvironmentSetUp($app);
+
+        $app->make(Manifest::class)->manifest = [
+            'astrotomic/statamic-webmentions' => [
+                'id'        => 'astrotomic/statamic-webmentions',
+                'namespace' => 'Astrotomic\\Webmentions\\Statamic\\',
+            ],
         ];
     }
 
